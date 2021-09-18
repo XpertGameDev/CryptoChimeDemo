@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+
+        />
+
+    <RelativeLayout
+        android:id="@+id/alertLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Set Alert for Price Change"
+            android:layout_marginTop="50dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/spinningTextViewId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100dp"
+            android:text="Select Coin"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="100dp"
+            android:textSize="15sp"
+            android:padding="12dp"
+            android:drawableRight="@drawable/ic_arrow"
+            android:background="@android:drawable/editbox_background"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/spinningTextViewId"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="60dp"
+            >
+
+            <CheckBox
+                android:id="@+id/audioOnCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Audio On"
+
+                />
+            <CheckBox
+                android:id="@+id/audioOffCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="Audio Off"
+                android:layout_alignRight="@id/audioOnCheckBox"
+                android:layout_alignParentRight="true"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/RLid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/audioOnCheckBox"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#4A4A4A"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/alertRLSymbolTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Symbol"
+                    android:textColor="#E0E1E1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/alertRLNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/alertRLSymbolTextView"
+                    android:text="Name"
+                    android:textColor="#E0E1E1"
+                    android:textSize="13sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/alerRLPriceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="42000"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/alertRL24PercentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/alerRLPriceTextView"
+                    android:layout_alignParentRight="true"
+                    android:text="0.00%"
+                    android:textColor="#17FA08"
+                    android:textSize="12sp"
+
+                    />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/percentUpTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/RLid"
+                android:text="Percentage Up"
+                android:textSize="16sp"
+                android:paddingVertical="10dp"
+                android:layout_marginLeft="30dp"
+                />
+
+            <EditText
+                android:id="@+id/puEdtTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="4"
+                android:digits="0123456789."
+                android:hint="0.00%"
+                android:textSize="16sp"
+                android:layout_marginRight="50dp"
+                android:layout_below="@id/RLid"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentRight="true"
+                android:singleLine="true"
+
+                />
+
+            <TextView
+                android:id="@+id/percentDownTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/percentUpTV"
+                android:text="Percentage Down"
+                android:textSize="16sp"
+                android:paddingVertical="10dp"
+                />
+
+            <EditText
+                android:id="@+id/pdEdtTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="5"
+                android:digits="-0123456789."
+                android:hint="0.00%"
+                android:textSize="16sp"
+                android:layout_marginRight="50dp"
+                android:layout_below="@id/puEdtTxt"
+                android:layout_marginTop="7dp"
+                android:layout_alignParentRight="true"
+                android:singleLine="true"
+
+                />
+
+
+            <Button
+                android:id="@+id/setAlertButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/percentDownTV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="90dp"
+                android:onClick="setAlertButton"
+                android:text="Set Alert"
+
+                app:backgroundTint="#4A4A4A" />
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+    <ProgressBar
+        android:id="@+id/idPBLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+
+
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/cardview_dark_background"
+        android:layout_alignParentBottom="true"
+
+        >
+
+
+        <Button
+            android:id="@+id/priceAlertButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="alertLayoutButton"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="Price Alert"
+            android:textColor="#1A1A1B"
+            android:textStyle="bold"
+            app:backgroundTint="#EBE9EF"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="homeLayoutButton"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="45dp"
+            android:text="Home"
+            android:textColor="#1A1A1B"
+            android:textStyle="bold"
+            app:backgroundTint="#EBE9EF"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

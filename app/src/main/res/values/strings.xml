@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Crypto Chime Beta</string>
+
+    <string-array name="country_names">
+        <item>Bangladesh</item>
+        <item>India</item>
+        <item>United States</item>
+        <item>Pakistan</item>
+        <item>Japan</item>
+
+    </string-array>
+
+
+
+
+</resources>
